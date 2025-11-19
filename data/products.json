@@ -192,7 +192,8 @@
     "name": "Flipkart Supermart Floor and Bathroom Cleaner Jasmine",
     "price": "₹  190 / 5 L",
     "priceint": 190,
-    "weight": "5 L"
+    "weight": "5 L",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FFlipkart%20Supermart%20Floor%20and%20Bathroom%20Cleaner%20Jasmine.webp?alt=media&token=e8804d24-fc1b-447c-8fb6-eafb1d327970"
   },
   {
     "name": "Harpic Disinfectant Bathroom Cleaner Liquid Lemon",
@@ -212,7 +213,8 @@
     "name": "Lizol Disinfectant Surface Cleaner Citrus",
     "price": "₹ 640 / 5 L",
     "priceint": 640,
-    "weight": "5 L"
+    "weight": "5 L",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FLizol%20Disinfectant%20Surface%20Cleaner%20Citrus.webp?alt=media&token=e20324d8-5bc7-4e17-9158-2d877a2b5b26"
   },
   {
     "name": "Mango Sindhura",
@@ -302,7 +304,8 @@
     "name": "Banana Yelakki (500gms) & Banana Robusta (500gms) Combo",
     "weight": "2 Combo",
     "price": "₹  78 / 2 Combo",
-    "priceint": 78
+    "priceint": 78,
+    "src":""
   },
   {
     "name": "Guava Indian Semi Ripe",
@@ -642,7 +645,8 @@
     "price": "₹ 656 /1500 g",
     "priceint": 656,
     "weight": 1500,
-    "unit": "g"
+    "unit": "g",
+    "src":""
   },
   {
     "name": "Tata Tea Premium Teaveda Tulsi, Cardamom, Ginger Black Tea Box",
@@ -705,14 +709,16 @@
     "priceint": 223,
     "price": "₹ 223 / 500 g",
     "weight": 500,
-    "unit": "g"
+    "unit": "g",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FTata%20Tea%20Premium%20Teaveda%20Tulsi%2C%20Cardamom%2C%20Ginger%20Black%20Tea%20Box.webp?alt=media&token=1afaf06f-99b6-4b25-8800-c9d5c9bca792"
   },
   {
     "name": "Flipkart Supermart Food Essentials Premium Tea Pouch",
     "price": "₹ 144 / 500 g",
     "priceint": 144,
     "weight": 500,
-    "unit": "g"
+    "unit": "g",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FFlipkart%20Supermart%20Food%20Essentials%20Premium%20Tea%20Pouch.webp?alt=media&token=ae637924-818d-4ccc-9236-8ba346983229"
   },
   {
     "key": 1,
@@ -823,7 +829,8 @@
     "name": "Dettol Original Germ Protection Soap bar",
     "priceint": 269,
     "weight": "4x125 g",
-    "price": "₹ 269 / 4x125 g"
+    "price": "₹ 269 / 4x125 g",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FDettol%20Original%20Germ%20Protection%20Bathing%20Soap%20bar.webp?alt=media&token=b655df68-d010-41e9-854d-683f5959ca47"
   },
   {
     "key": 15,
@@ -861,13 +868,15 @@
     "name": "BAJAJ 100% Pure Coconut Hair Oil",
     "price": "₹ 140 / 600ml",
     "priceint": 140,
-    "weight": "600 ml"
+    "weight": "600 ml",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FBAJAJ%20%20Pure%20Coconut%20Hair%20Oil.webp?alt=media&token=7b7cb6c9-8174-4885-bbaf-0c2e45d542be"
   },
   {
     "name": "Parachute Pure Coconut Hair Oil",
     "price": "₹ 113 / 300ml",
     "priceint": 113,
-    "weight": "300 ml"
+    "weight": "300 ml",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FParachute%20Pure%20Coconut%20Hair%20Oil.webp?alt=media&token=be92286b-b01c-4c6f-ac33-29cac38f884c"
   },
   {
     "name": "BAJAJ Almond Drops Hair Oil enriched with 6X Vitamin E, Reduces Hair Fall, 650 ml Hair Oil",
@@ -880,7 +889,8 @@
     "name": "Parachute Advansed Gold Coconut with Vitamin-E for Long, Strong & Gorgeous Hair Oil",
     "price": "₹ 199 / 400ml",
     "priceint": 199,
-    "weight": "400 ml"
+    "weight": "400 ml",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FParachute%20Advansed%20Gold%20Coconut%20with%20Vitamin-E%20for%20Long%2C%20Strong%20%26%20Gorgeous%20Hair%20Oil.webp?alt=media&token=817e1d98-1e85-4a9a-b4c7-a731450d4f40"
   },
   {
     "name": "EMAMI 7 Oils In One Hair Oil",
@@ -893,7 +903,8 @@
     "name": "CARA MIA 100% Pure Coconut Hair Oil",
     "price": "₹ 112 / 500ml",
     "priceint": 112,
-    "weight": "500 ml"
+    "weight": "500 ml",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FCARA%20MIA%20%20Pure%20Coconut%20Hair%20Oil.webp?alt=media&token=4f6d6107-403d-4522-a91e-2e49a21c0cd6"
   },
   {
     "name": "Dabur Almond Shampoo for Dull, Dry and Weak Hair",
@@ -920,7 +931,8 @@
     "name": "Dettol Effective Protection Antiseptic Liquid",
     "price": "₹196 / 550 ml",
     "priceint": 196,
-    "weight": "550 ml"
+    "weight": "550 ml",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FDettol%20Effective%20Protection%20Antiseptic%20Liquid.webp?alt=media&token=ab00e9f3-ad97-4d8f-b7af-4b821f81b1aa"
   },
   {
     "name": "MOOV Fast Pain Relief Spray",
@@ -1024,7 +1036,8 @@
     "priceint": 151,
     "weight": 1,
     "unit": "kg",
-    "price": "₹ 151 / 1 kg"
+    "price": "₹ 151 / 1 kg",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FTata%20Sampann%20Toor%20Arhar%20Dal.webp?alt=media&token=cb700bc8-7b98-4397-b755-b085d86d770b"
   },
   {
     "key": 8,
@@ -1221,7 +1234,8 @@
     "priceint": 330,
     "weight": 10,
     "unit": "kg",
-    "price": "₹ 330 / 10 kg"
+    "price": "₹ 330 / 10 kg",
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FChakki%20Atta.webp?alt=media&token=e0072673-2694-42a1-857c-37f9512db3c2"
   },
   {
     "key": 30,
@@ -1437,7 +1451,7 @@
     "price": "₹  16 / 500 g",
     "weight": 500,
     "priceint": 16,
-    "src": "https://storage.googleapis.com/gogrocers-2024.appspot.com/product_image%2Fcabbage.webp"
+    "src": "https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2Fcabbage.webp"
   },
   {
     "type": "veg",
@@ -1473,7 +1487,7 @@
     "price": "₹  24 / 250 g",
     "weight": 250,
     "priceint": 24,
-    "src": "https://storage.googleapis.com/gogrocers-2024.appspot.com/product_image%2FCoriander%20Leaves%20%2C%20Lemon%20%20%26%20Chilli%20Green%20%20Combo.webp"
+    "src": "https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FCoriander%20Leaves%20%2C%20Lemon%20%20%26%20Chilli%20Green%20%20Combo.webp"
   },
   {
     "type": "veg",
@@ -1499,7 +1513,8 @@
     "name": "GINGER",
     "price": "₹  25 / 250 g",
     "weight": 250,
-    "priceint": 25
+    "priceint": 25,
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2Fginger.webp?alt=media&token=94f155a6-ae3f-4ed5-965f-b1c80c023652"
   },
   {
     "type": "veg",
@@ -1525,7 +1540,8 @@
     "name": "ONION",
     "price": "₹  21 / 1000 g",
     "weight": 1000,
-    "priceint": 21
+    "priceint": 21,
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2Fonion.webp?alt=media&token=163d18d4-bb63-4345-9b0f-65eb14d30125"
   },
   {
     "type": "veg",
@@ -1533,7 +1549,8 @@
     "name": "POTATO",
     "price": "₹  22 / 1000 g",
     "weight": 1000,
-    "priceint": 22
+    "priceint": 22,
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2Fpotato.webp?alt=media&token=e196eb5a-f844-43eb-89d7-f42f85a8df2a"
   },
   {
     "type": "veg",
@@ -1586,7 +1603,8 @@
     "name": "Carrot Local",
     "weight": "500 g",
     "price": "₹ 34 / 500 g",
-    "priceint": 34
+    "priceint": 34,
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FCarrot%20Local.webp?alt=media&token=f6e286f2-ef60-439a-b436-cad1d6aac5f1"
   },
   {
     "type": "veg",
@@ -1603,7 +1621,8 @@
     "name": "Tomato Hybrid",
     "weight": "1 kg",
     "price": "₹ 29 / 1 kg",
-    "priceint": 29
+    "priceint": 29,
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FTomato%20Hybrid.webp?alt=media&token=6d88a3bf-65ce-4b96-bf75-ba3e43896179"
   },
   {
     "type": "veg",
@@ -1620,7 +1639,8 @@
     "name": "Beetroot",
     "weight": "250 g",
     "price": "₹ 16 / 250 g",
-    "priceint": 16
+    "priceint": 16,
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2Fbeetroot.webp"
   },
   {
     "type": "veg",
@@ -1637,7 +1657,8 @@
     "name": "Onion",
     "weight": "1 kg",
     "price": "₹ 25 / 1000 g",
-    "priceint": 25
+    "priceint": 25,
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2Fonion.webp?alt=media&token=163d18d4-bb63-4345-9b0f-65eb14d30125"
   },
   {
     "type": "veg",
@@ -1645,7 +1666,8 @@
     "name": "Coriander Leaves (100gms), Lemon (200gms) & Chilli Green (100gms) Combo",
     "weight": "3 Combo",
     "price": "₹ 87 / 3 Combo",
-    "priceint": 87
+    "priceint": 87,
+    "src":"https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2FCoriander%20Leaves%20%2C%20Lemon%20%20%26%20Chilli%20Green%20%20Combo.webp"
   },
   {
     "type": "veg",
@@ -1653,7 +1675,8 @@
     "name": "Cabbage",
     "weight": "1 pc (Approx. 600g)",
     "price": "₹ 24 / 1 pc ( 600g )",
-    "priceint": 24
+    "priceint": 24,
+     "src": "https://firebasestorage.googleapis.com/v0/b/gogrocers-2024.appspot.com/o/product_image%2Fcabbage.webp"
   },
   {
     "type": "veg",
