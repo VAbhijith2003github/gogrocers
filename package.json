@@ -57,6 +57,9 @@
       "last 1 safari version"
     ]
   },
+  "engines": {
+    "node": "22.x"
+  },
   "devDependencies": {
     "@types/jquery": "^3.5.16",
     "json-loader": "^0.5.7"
