@@ -8,6 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import emptybasket from "../../images/accmedia/basketempty.png"
+import GetCart from "../firestore.operations.files/getcart";
 
 const Cart = () => {
   const { setcart, cart } = useContext(MyContext);
@@ -57,11 +58,13 @@ const Cart = () => {
   useEffect(() => {
     const uid = localStorage.getItem("uid");
     const fetchUserData = async () => {
-      if (localStorage.getItem("authenticated" === "true")) {
+      if (localStorage.getItem("authenticated")=== "true") {
         try {
           console.log(uid);
-          const userdetails = await GetUser(uid);
-          setcart(userdetails.cart);
+          // const userdetails = await GetUser(uid);
+          const usercart = await GetCart(uid);
+          console.log(usercart);
+          setcart(usercart.cart);
         } catch (error) {
           toast.error("Error fetching user data", {
             position: "top-right",
@@ -77,7 +80,7 @@ const Cart = () => {
       }
     };
     fetchUserData();
-  }, [cart, setcart]);
+  }, []);
 
  function handleClick()
   {

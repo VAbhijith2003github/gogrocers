@@ -133,6 +133,17 @@ const AISuggestion = () => {
 
             {suggestedProducts.map((product) => (
               <div key={product.id || product.name} className="product-card">
+                <div className="imgdiv" style={{ display: 'flex', justifyContent: 'center' }}>
+                  { (product.src || product.image || product.img || product.thumbnail) ? (
+                    <img
+                      className="cardimgproduct"
+                      src={product.src || product.image || product.img || product.thumbnail}
+                      alt={product.name}
+                      style={{ maxWidth: '120px', maxHeight: '120px', objectFit: 'contain' }}
+                    />
+                  ) : null }
+                </div>
+
                 <h4 className="product-name">{product.name}</h4>
 
                 {/* Dynamically color the price based on mode */}
