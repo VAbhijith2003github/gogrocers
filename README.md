@@ -25,13 +25,11 @@ GoGrocers is a dynamic e-commerce website dedicated to groceries, built using Re
   <li>Address selector in checkout page</li>
 </ul>
 
-## Further progress
-The project is in progress further version updates will be coming soon
-planned updates.
+## Recent Updates
+Certain updates was added recently to the project
 <ul>
-<li>Convert the product database which is currently in json file to SQL based database</li>
-<li>Implement email campaign for discount alerts</li>
-<li>create an admin page with interactable UI that gives data insights on stock, orders ... et cetera</li>
+<li>Integrated AI Shopping Assistant using **Google Gemini** that suggests products based on recipes on user request</li>
+<li>Utilised **Vercel Serverless functions** to orchestrate Gemini API integrations and backend logic</li>
 </ul>
 
 ## Contact
