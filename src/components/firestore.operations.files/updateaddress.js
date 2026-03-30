@@ -1,30 +1,25 @@
-import {
-  getFirestore,
-  collection,
-  doc,
-  getDoc,
-  updateDoc,
-} from "firebase/firestore";
-import { app } from "../../firebase-config";
+const USER_SERVICE = "https://user-service-production-43f5.up.railway.app";
 
 async function UpdateUser(uid, newAddress) {
   try {
-    const db = getFirestore(app);
-    const usersCollection = collection(db, "users");
-    const userDocRef = doc(usersCollection, uid);
-    const userDocSnapshot = await getDoc(userDocRef);
+    const token = localStorage.getItem("token");
+    const response = await fetch(`${USER_SERVICE}/api/users/${uid}/add-address`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ address: newAddress }),
+    });
 
-    if (userDocSnapshot.exists()) {
-      const existingUserData = userDocSnapshot.data();
-      const updatedAddresses = [...existingUserData.address, newAddress];
-      await updateDoc(userDocRef, { address: updatedAddresses });
-
-      console.log("User document updated with new address:", newAddress);
-    } else {
-      console.log("User document does not exist. Cannot update address.");
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.message || `UpdateAddress failed: ${response.status}`);
     }
+
+    console.log("User document updated with new address:", newAddress);
   } catch (error) {
-    console.error("Error updating user document:", error);
+    console.error("Error updating address:", error);
     throw error;
   }
 }

@@ -1,32 +1,30 @@
-import {
-    getFirestore,
-    collection,
-    doc,
-    getDoc,
-  } from "firebase/firestore";
-  import { app } from "../../firebase-config";
-  
-  async function GetUser(userid) {
-    try {
-      const db = getFirestore(app);
-      const usersCollection = collection(db, "users");
-      const userDocRef = doc(usersCollection, userid);
-      const userDocSnapshot = await getDoc(userDocRef);
-  
-      if (userDocSnapshot.exists()) {
-        // If the document exists, return the user data
-        const userData = userDocSnapshot.data();
-        console.log("User data retrieved:", userData);
-        return userData;
-      } else {
+const USER_SERVICE = "https://user-service-production-43f5.up.railway.app";
+
+async function GetUser(userid) {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await fetch(`${USER_SERVICE}/api/users/${userid}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      if (response.status === 404) {
         console.log("User document not found for UID:", userid);
-        return null; // Return null or handle accordingly if the document doesn't exist
+        return null;
       }
-    } catch (error) {
-      console.error("Error getting user document:", error);
-      throw error;
+      throw new Error(`GetUser failed: ${response.status}`);
     }
+
+    const userData = await response.json();
+    console.log("User data retrieved:", userData);
+    return userData;
+  } catch (error) {
+    console.error("Error getting user:", error);
+    throw error;
   }
-  
-  export default GetUser;
-  
+}
+
+export default GetUser;

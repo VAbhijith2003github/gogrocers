@@ -43,7 +43,7 @@ function Login() {
       .then((userCredential) => {
         async function loginwithmail() {
           const user = userCredential.user;
-          const token = user.getIdToken();
+          const token = await user.getIdToken();
           const userEmail = user.email;
           const userName = user.displayName;
           const userid = user.uid;
@@ -100,7 +100,7 @@ function Login() {
           const userName = user.displayName;
           const userEmail = user.email;
           const userid = user.uid;
-          const token = userCredential.idToken;
+          const token = await user.getIdToken();
           localStorage.setItem("token", token);
           localStorage.setItem("authenticated", "true");
           localStorage.setItem("uid", userid);
