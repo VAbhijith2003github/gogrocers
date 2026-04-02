@@ -1,4 +1,4 @@
-const ORDER_SERVICE = "http://65.2.10.164";
+const ORDER_SERVICE = "https://65.2.10.164.sslip.io";
 
 async function AddUserOrder(userid, order) {
   try {

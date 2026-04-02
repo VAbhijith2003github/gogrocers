@@ -1,4 +1,4 @@
-const QUERY_SERVICE = "http://65.2.10.164";
+const QUERY_SERVICE = "https://65.2.10.164.sslip.io";
 
 async function CreateQuery(userid, userEmail, query) {
   try {

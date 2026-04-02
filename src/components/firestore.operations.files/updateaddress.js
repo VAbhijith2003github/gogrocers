@@ -1,4 +1,4 @@
-const USER_SERVICE = "http://65.2.10.164";
+const USER_SERVICE = "https://65.2.10.164.sslip.io";
 
 async function UpdateUser(uid, newAddress) {
   try {

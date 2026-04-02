@@ -1,4 +1,4 @@
-const CART_SERVICE = "http://65.2.10.164";
+const CART_SERVICE = "https://65.2.10.164.sslip.io";
 
 async function ResetCart(uid) {
   try {
