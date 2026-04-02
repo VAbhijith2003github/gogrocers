@@ -1,4 +1,4 @@
-const USER_SERVICE = "https://user-service-production-43f5.up.railway.app";
+const USER_SERVICE = "http://65.2.10.164";
 
 async function CreateUser(userid, userEmail, userName) {
   try {

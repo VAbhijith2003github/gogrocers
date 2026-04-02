@@ -1,4 +1,4 @@
-const ORDER_SERVICE = "https://order-service-production-293a.up.railway.app";
+const ORDER_SERVICE = "http://65.2.10.164";
 
 async function AddUserOrder(userid, order) {
   try {

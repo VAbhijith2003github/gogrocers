@@ -1,4 +1,4 @@
-const QUERY_SERVICE = "https://query-service-production.up.railway.app";
+const QUERY_SERVICE = "http://65.2.10.164";
 
 async function CreateQuery(userid, userEmail, query) {
   try {

@@ -1,4 +1,4 @@
-const CART_SERVICE = "https://cart-service-production-6202.up.railway.app";
+const CART_SERVICE = "http://65.2.10.164";
 
 async function GetCart(userid) {
   try {
