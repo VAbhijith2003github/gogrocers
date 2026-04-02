@@ -1,33 +1,25 @@
-import {
-  getFirestore,
-  collection,
-  doc,
-  getDoc,
-  updateDoc,
-} from "firebase/firestore";
-import { app } from "../../firebase-config";
+const USER_SERVICE = "https://user-service-production-43f5.up.railway.app";
 
 async function UpdateUser(uid, name, phonenumber) {
   try {
-    const db = getFirestore(app);
-    const usersCollection = collection(db, "users");
-    const userDocRef = doc(usersCollection, uid);
-    const userDocSnapshot = await getDoc(userDocRef);
+    const token = localStorage.getItem("token");
+    const response = await fetch(`${USER_SERVICE}/api/users/${uid}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ name, phonenumber }),
+    });
 
-    if (userDocSnapshot.exists()) {
-      const updatedUserData = {
-        ...userDocSnapshot.data(),
-        name: name,
-        phonenumber: phonenumber,
-      };
-
-      await updateDoc(userDocRef, updatedUserData);
-      console.log("User document updated:", updatedUserData);
-    } else {
-      console.log("User document does not exist. Cannot update.");
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.message || `UpdateUser failed: ${response.status}`);
     }
+
+    console.log("User document updated:", { name, phonenumber });
   } catch (error) {
-    console.error("Error updating user document:", error);
+    console.error("Error updating user:", error);
     throw error;
   }
 }

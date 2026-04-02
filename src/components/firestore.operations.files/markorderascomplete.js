@@ -1,52 +1,23 @@
-import {
-  getFirestore,
-  collection,
-  doc,
-  getDoc,
-  setDoc,
-} from "firebase/firestore";
-import { app } from "../../firebase-config";
-
-async function AddUserOrdertoCompleted(userid, order) {
-  try {
-    const db = getFirestore(app);
-    const ordersCollection = collection(db, "orders");
-    const userDocRef = doc(ordersCollection, userid);
-    const userDocSnapshot = await getDoc(userDocRef);
-    const existingData = userDocSnapshot.exists() ? userDocSnapshot.data() : {};
-    const updatedOrders = [...(existingData.completed || []), order];
-
-    await setDoc(userDocRef, {
-      ...existingData,
-      onorder: existingData.onorder,
-      completed: updatedOrders,
-    });
-    console.log("Order added successfully to completed.");
-  } catch (error) {
-    console.error("Error adding order:", error);
-    throw error;
-  }
-}
+const ORDER_SERVICE = "https://order-service-production-293a.up.railway.app";
 
 async function MarkOrderAsComplete(userid, order) {
   try {
-    await AddUserOrdertoCompleted(userid, order);
-    const db = getFirestore(app);
-    const ordersCollection = collection(db, "orders");
-    const userDocRef = doc(ordersCollection, userid);
-    const userDocSnapshot = await getDoc(userDocRef);
-    const existingData = userDocSnapshot.exists() ? userDocSnapshot.data() : {};
-    const updatedOrders = existingData.onorder.filter(
-      (item) => item.id !== order.id
-    );
-
-    await setDoc(userDocRef, {
-      ...existingData,
-      onorder: updatedOrders,
-      completed: existingData.completed || [],
+    const token = localStorage.getItem("token");
+    const response = await fetch(`${ORDER_SERVICE}/api/orders/${userid}/complete`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ order }),
     });
 
-    console.log("Order marked as complete successfully.");
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.message || `MarkOrderAsComplete failed: ${response.status}`);
+    }
+
+    console.log("Order marked as complete via API.");
   } catch (error) {
     console.error("Error marking order as complete:", error);
     throw error;

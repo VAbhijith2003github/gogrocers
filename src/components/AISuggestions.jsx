@@ -3,6 +3,25 @@ import './AISuggestions.css'; // Make sure the path matches where you saved the 
 import $ from 'jquery';
 import { MyContext } from '../App';
 
+import pp from '../images/packaged_product images/ppimg';
+import cp from '../images/cleaning_products images/cpimg';
+import pc from '../images/personal_care images/pcimg';
+import staples from '../images/staples images/stapleimg';
+import vegetables from '../images/vegetable images/vegimg';
+import fruit from '../images/fruits images/fruitimg';
+
+// Build a name → local bundled src lookup from all product image modules
+const localImageMap = {};
+[...pp, ...cp, ...pc, ...staples, ...vegetables, ...fruit].forEach((item) => {
+  if (item.name && item.src) {
+    localImageMap[item.name.toLowerCase().trim()] = item.src;
+  }
+});
+
+const getLocalFallback = (name) =>
+  localImageMap[name?.toLowerCase().trim()] || null;
+
+
 const AISuggestion = () => {
   const [prompt, setPrompt] = useState("");
   const [suggestedProducts, setSuggestedProducts] = useState([]);
@@ -140,6 +159,14 @@ const AISuggestion = () => {
                       src={product.src || product.image || product.img || product.thumbnail}
                       alt={product.name}
                       style={{ maxWidth: '120px', maxHeight: '120px', objectFit: 'contain' }}
+                      onError={(e) => {
+                        const fallback = getLocalFallback(product.name);
+                        if (fallback && e.target.src !== fallback) {
+                          e.target.src = fallback;
+                        } else {
+                          e.target.style.display = 'none';
+                        }
+                      }}
                     />
                   ) : null }
                 </div>

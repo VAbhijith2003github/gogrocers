@@ -1,35 +1,25 @@
-import {
-    getFirestore,
-    collection,
-    doc,
-    getDoc,
-    updateDoc,
-  } from "firebase/firestore";
-  import { app } from "../../firebase-config";
-  
-  async function ResetCart(uid) {
-    try {
-      const db = getFirestore(app);
-      const usersCollection = collection(db, "carts");
-      const userDocRef = doc(usersCollection, uid);
-      const userDocSnapshot = await getDoc(userDocRef);
-  
-      if (userDocSnapshot.exists()) {
-        const updatedUserData = {
-          ...userDocSnapshot.data(),
-          cart: [],
-        };
-  
-        await updateDoc(userDocRef, updatedUserData);
-        console.log("User document updated:", updatedUserData);
-      } else {
-        console.log("User document does not exist. Cannot update.");
-      }
-    } catch (error) {
-      console.error("Error updating user document:", error);
-      throw error;
+const CART_SERVICE = "https://cart-service-production-6202.up.railway.app";
+
+async function ResetCart(uid) {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await fetch(`${CART_SERVICE}/api/cart/${uid}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.message || `ResetCart failed: ${response.status}`);
     }
+
+    console.log("Cart cleared via API.");
+  } catch (error) {
+    console.error("Error resetting cart:", error);
+    throw error;
   }
-  
-  export default ResetCart;
-  
+}
+
+export default ResetCart;

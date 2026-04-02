@@ -1,32 +1,34 @@
-import {
-  getFirestore,
-  collection,
-  doc,
-  getDoc,
-  setDoc,
-} from "firebase/firestore";
-import { app } from "../../firebase-config";
-import ResetCart from "./resetcart";
+const ORDER_SERVICE = "https://order-service-production-293a.up.railway.app";
 
 async function AddUserOrder(userid, order) {
   try {
-    const db = getFirestore(app);
-    const ordersCollection = collection(db, "orders");
-    const userDocRef = doc(ordersCollection, userid);
-    const userDocSnapshot = await getDoc(userDocRef);
-    const existingData = userDocSnapshot.exists() ? userDocSnapshot.data() : {};
-    const updatedOrders = [...(existingData.onorder || []), order];
+    const token = localStorage.getItem("token");
+    
+    // Map fields for backend Kafka producer/Mailer compatibility
+    const augmentedOrder = {
+      ...order,
+      items: order.orderdetail, // Backend expects 'items' for Mailer
+      total: order.totalPrice,   // Backend expects 'total' for Mailer
+      address: order.deliveryaddress // Backend expects 'address' for Mailer
+    };
 
-    await setDoc(userDocRef, {
-      ...existingData,
-      onorder: updatedOrders,
-      completed: existingData.completed || [],
+    const response = await fetch(`${ORDER_SERVICE}/api/orders/${userid}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ order: augmentedOrder }),
     });
 
-    console.log("Order added successfully.");
-    await ResetCart(userid);
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.message || `AddUserOrder failed: ${response.status}`);
+    }
+
+    console.log("Order placed successfully via API.");
   } catch (error) {
-    console.error("Error adding order:", error);
+    console.error("Error placing order:", error);
     throw error;
   }
 }

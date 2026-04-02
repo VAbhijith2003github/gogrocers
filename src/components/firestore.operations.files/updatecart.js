@@ -1,35 +1,27 @@
-import {
-    getFirestore,
-    collection,
-    doc,
-    getDoc,
-    updateDoc,
-  } from "firebase/firestore";
-  import { app } from "../../firebase-config";
-  
-  async function UpdateUser(uid, cart) {
-    try {
-      const db = getFirestore(app);
-      const usersCollection = collection(db, "carts");
-      const userDocRef = doc(usersCollection, uid);
-      const userDocSnapshot = await getDoc(userDocRef);
-  
-      if (userDocSnapshot.exists()) {
-        const updatedUserData = {
-          ...userDocSnapshot.data(),
-          cart: cart,
-        };
-  
-        await updateDoc(userDocRef, updatedUserData);
-        console.log("User document updated:", updatedUserData);
-      } else {
-        console.log("User document does not exist. Cannot update.");
-      }
-    } catch (error) {
-      console.error("Error updating user document:", error);
-      throw error;
+const CART_SERVICE = "https://cart-service-production-6202.up.railway.app";
+
+async function UpdateCart(uid, cart) {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await fetch(`${CART_SERVICE}/api/cart/${uid}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ cart }),
+    });
+
+    if (!response.ok) {
+      const err = await response.json().catch(() => ({}));
+      throw new Error(err.message || `UpdateCart failed: ${response.status}`);
     }
+
+    console.log("Cart updated via API.");
+  } catch (error) {
+    console.error("Error updating cart:", error);
+    throw error;
   }
-  
-  export default UpdateUser;
-  
+}
+
+export default UpdateCart;

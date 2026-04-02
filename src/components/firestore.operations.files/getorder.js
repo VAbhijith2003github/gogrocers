@@ -1,32 +1,30 @@
-import {
-    getFirestore,
-    collection,
-    doc,
-    getDoc,
-  } from "firebase/firestore";
-  import { app } from "../../firebase-config";
-  
-  async function GetOrder(userid) {
-    try {
-      const db = getFirestore(app);
-      const usersCollection = collection(db, "orders");
-      const userDocRef = doc(usersCollection, userid);
-      const userDocSnapshot = await getDoc(userDocRef);
-  
-      if (userDocSnapshot.exists()) {
-        // If the document exists, return the user data
-        const userData = userDocSnapshot.data();
-        console.log("User data retrieved:", userData);
-        return userData;
-      } else {
-        console.log("User document not found for UID:", userid);
-        return null; // Return null or handle accordingly if the document doesn't exist
+const ORDER_SERVICE = "https://order-service-production-293a.up.railway.app";
+
+async function GetOrder(userid) {
+  try {
+    const token = localStorage.getItem("token");
+    const response = await fetch(`${ORDER_SERVICE}/api/orders/${userid}`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      if (response.status === 404) {
+        console.log("No orders found for UID:", userid);
+        return null;
       }
-    } catch (error) {
-      console.error("Error getting user document:", error);
-      throw error;
+      throw new Error(`GetOrder failed: ${response.status}`);
     }
+
+    const data = await response.json();
+    console.log("Orders retrieved:", data);
+    return data;
+  } catch (error) {
+    console.error("Error getting orders:", error);
+    throw error;
   }
-  
-  export default GetOrder;
-  
+}
+
+export default GetOrder;
