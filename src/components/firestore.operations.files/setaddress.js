@@ -1,4 +1,4 @@
-const USER_SERVICE = "https://user-service-production-43f5.up.railway.app";
+import { USER_SERVICE } from "../../config/endpoints.js";
 
 async function SetUser(uid, Addresses) {
   try {

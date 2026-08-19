@@ -1,4 +1,4 @@
-const ORDER_SERVICE = "https://order-service-production-293a.up.railway.app";
+import { ORDER_SERVICE } from "../../config/endpoints.js";
 
 async function AddUserOrder(userid, order) {
   try {

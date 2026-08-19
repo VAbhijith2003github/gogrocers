@@ -1,4 +1,4 @@
-const CART_SERVICE = "https://cart-service-production-6202.up.railway.app";
+import { CART_SERVICE } from "../../config/endpoints.js";
 
 async function ResetCart(uid) {
   try {

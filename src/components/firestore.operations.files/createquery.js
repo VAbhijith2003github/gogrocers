@@ -1,4 +1,4 @@
-const QUERY_SERVICE = "https://query-service-production.up.railway.app";
+import { QUERY_SERVICE } from "../../config/endpoints.js";
 
 async function CreateQuery(userid, userEmail, query) {
   try {
