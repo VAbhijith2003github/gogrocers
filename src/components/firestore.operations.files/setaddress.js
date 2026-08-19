@@ -1,4 +1,4 @@
-const USER_SERVICE = "https://65.2.10.164.sslip.io";
+import { USER_SERVICE } from "../../config/endpoints.js";
 
 async function SetUser(uid, Addresses) {
   try {

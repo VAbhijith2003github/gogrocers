@@ -1,4 +1,4 @@
-const ORDER_SERVICE = "https://65.2.10.164.sslip.io";
+import { ORDER_SERVICE } from "../../config/endpoints.js";
 
 async function GetOrder(userid) {
   try {

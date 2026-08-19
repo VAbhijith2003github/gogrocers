@@ -1,4 +1,4 @@
-const CART_SERVICE = "https://65.2.10.164.sslip.io";
+import { CART_SERVICE } from "../../config/endpoints.js";
 
 async function UpdateCart(uid, cart) {
   try {

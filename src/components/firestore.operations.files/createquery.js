@@ -1,4 +1,4 @@
-const QUERY_SERVICE = "https://65.2.10.164.sslip.io";
+import { QUERY_SERVICE } from "../../config/endpoints.js";
 
 async function CreateQuery(userid, userEmail, query) {
   try {
